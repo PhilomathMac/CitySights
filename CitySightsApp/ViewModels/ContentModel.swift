@@ -13,6 +13,9 @@ class ContentModel : NSObject, ObservableObject, CLLocationManagerDelegate {
     // MARK: Properties
     var locationManager = CLLocationManager()
     
+    @Published var restaurants = [Business]()
+    @Published var sights = [Business]()
+    
     // MARK: Init
     // Runs when a new instance of ContentModel is created
     override init() {
@@ -55,8 +58,8 @@ class ContentModel : NSObject, ObservableObject, CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             
             // If we have the coordinates of the user, send into Yelp API
-            // getBusinesses(category: "arts", location: userLocation!)
-            getBusinesses(category: "restaurants", location: userLocation!)
+            getBusinesses(category: Constants.sightsKey, location: userLocation!)
+            getBusinesses(category: Constants.restaurantsKey, location: userLocation!)
             
         }
         
@@ -70,17 +73,17 @@ class ContentModel : NSObject, ObservableObject, CLLocationManagerDelegate {
         // One way to create the url string using concatonation
         /* let urlString = "https://api.yelp.com/v3/businesses/search?latitude=\(location.coordinate.latitude)&logitude=\(location.coordinate.longitude)&categories=\(category)&limit=10"
          
-            let url = URL(string: urlString)
+         let url = URL(string: urlString)
          */
         
-        var urlComponents = URLComponents(string: "https://api.yelp.com/v3/businesses/search")
+        var urlComponents = URLComponents(string: Constants.apiUrl)
         urlComponents?.queryItems = [
             
             URLQueryItem(name: "latitude", value: String(location.coordinate.latitude)),
             URLQueryItem(name: "longitude", value: String(location.coordinate.longitude)),
             URLQueryItem(name: "categories", value: String(category)),
             URLQueryItem(name: "limit", value: "10")
-        
+            
         ]
         
         let url = urlComponents?.url
@@ -92,7 +95,7 @@ class ContentModel : NSObject, ObservableObject, CLLocationManagerDelegate {
             
             request.httpMethod = "GET"
             
-            request.addValue("Bearer tBH8yWFcJNlJwNx0H3HHp76nRxtjO9iniV_jkxXal_tnjc4HUCCenkFfC1ltt4GRD_g-IipghJmjSkFppNZ6HZiq16kO_QL-nQSiY2ebivv0m2xC4v9K1dcQYqzcYXYx", forHTTPHeaderField: "Authorization")
+            request.addValue("Bearer \(Constants.apiKey)", forHTTPHeaderField: "Authorization")
             
             
             // Get URL Session
@@ -104,7 +107,29 @@ class ContentModel : NSObject, ObservableObject, CLLocationManagerDelegate {
                 
                 // Check that there isn't an error
                 if error == nil {
-                    print(response)
+                    do {
+                        // Parse json
+                        let decoder = JSONDecoder()
+                        let result = try decoder.decode(BusinessSearch.self, from: data!)
+                        
+                        DispatchQueue.main.async {
+                            // Assign results to the appropriate property
+                            
+                            switch category {
+                            case Constants.sightsKey:
+                                self.sights = result.businesses
+                            case Constants.restaurantsKey:
+                                self.restaurants = result.businesses
+                            default:
+                                break
+                            }
+                        }
+                        
+                        
+                    } catch {
+                        print("Error parsing JSON")
+                        print(error)
+                    }
                 }
                 
             }
@@ -113,7 +138,7 @@ class ContentModel : NSObject, ObservableObject, CLLocationManagerDelegate {
             dataTask.resume()
         }
         
-
+        
         
     }
     
