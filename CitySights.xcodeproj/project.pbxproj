@@ -116,8 +116,8 @@
 				BB407C06278F8DF0009466F6 /* BusinessList.swift */,
 				BB407C07278F8DF0009466F6 /* BusinessRow.swift */,
 				BB407C08278F8DF0009466F6 /* BusinessSection.swift */,
-				BB407C09278F8DF0009466F6 /* Detail */,
 				BB407C0B278F8DF0009466F6 /* BusinessSectionHeader.swift */,
+				BB407C09278F8DF0009466F6 /* Detail */,
 			);
 			path = List;
 			sourceTree = "<group>";

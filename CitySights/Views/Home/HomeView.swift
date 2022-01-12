@@ -15,29 +15,30 @@ struct HomeView: View {
     var body: some View {
         
         if model.restaurants.count != 0 || model.sights.count != 0 {
-            
-            // Determine list or map view
-            if !isMapShowing {
-                // Show list
-                
-                VStack (alignment: .leading){
-                    HStack{
-                        Image(systemName: "mappin.circle")
-                        Text("User City")
-                        Spacer()
-                        Image(systemName: "map")
+            NavigationView {
+                // Determine list or map view
+                if !isMapShowing {
+                    // Show list
+                    
+                    VStack (alignment: .leading){
+                        HStack{
+                            Image(systemName: "mappin.circle")
+                            Text("User City")
+                            Spacer()
+                            Image(systemName: "map")
+                        }
+                        
+                        Divider()
+                        
+                        BusinessList()
                     }
+                    .padding([.horizontal, .top])
+                    .navigationBarHidden(true)
                     
-                    Divider()
-                    
-                    BusinessList()
+                } else {
+                    // TODO: Show Map
                 }
-                .padding([.horizontal, .top])
-                
-            } else {
-                // TODO: Show Map
             }
-            
         } else {
             // Don't have data yet so let user know to wait
             ProgressView()
