@@ -109,6 +109,7 @@
 				BB407C04278F8DF0009466F6 /* HomeView.swift */,
 				BB407C05278F8DF0009466F6 /* List */,
 				BB407C21278FA350009466F6 /* Map */,
+				BB407C09278F8DF0009466F6 /* Detail */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -120,7 +121,6 @@
 				BB407C07278F8DF0009466F6 /* BusinessRow.swift */,
 				BB407C08278F8DF0009466F6 /* BusinessSection.swift */,
 				BB407C0B278F8DF0009466F6 /* BusinessSectionHeader.swift */,
-				BB407C09278F8DF0009466F6 /* Detail */,
 			);
 			path = List;
 			sourceTree = "<group>";
