@@ -25,7 +25,12 @@ struct HomeView: View {
                             Image(systemName: "mappin.circle")
                             Text("User City")
                             Spacer()
-                            Image(systemName: "map")
+                            Button {
+                                self.isMapShowing = true
+                            } label: {
+                                Image(systemName: "map")
+                            }
+
                         }
                         
                         Divider()
@@ -36,7 +41,8 @@ struct HomeView: View {
                     .navigationBarHidden(true)
                     
                 } else {
-                    // TODO: Show Map
+                    BusinessMap()
+                        .ignoresSafeArea()
                 }
             }
         } else {

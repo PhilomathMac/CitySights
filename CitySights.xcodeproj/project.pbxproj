@@ -21,6 +21,7 @@
 		BB407C1C278F8E37009466F6 /* BusinessSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB407C1A278F8E37009466F6 /* BusinessSearch.swift */; };
 		BB407C1D278F8E37009466F6 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB407C1B278F8E37009466F6 /* Business.swift */; };
 		BB407C20278F8E44009466F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB407C1F278F8E44009466F6 /* Constants.swift */; };
+		BB407C23278FA372009466F6 /* BusinessMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB407C22278FA372009466F6 /* BusinessMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		BB407C1A278F8E37009466F6 /* BusinessSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessSearch.swift; sourceTree = "<group>"; };
 		BB407C1B278F8E37009466F6 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		BB407C1F278F8E44009466F6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BB407C22278FA372009466F6 /* BusinessMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				BB407C04278F8DF0009466F6 /* HomeView.swift */,
 				BB407C05278F8DF0009466F6 /* List */,
+				BB407C21278FA350009466F6 /* Map */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -167,6 +170,14 @@
 				BB407C1F278F8E44009466F6 /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BB407C21278FA350009466F6 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				BB407C22278FA372009466F6 /* BusinessMap.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +259,7 @@
 				BB407C13278F8DF0009466F6 /* BusinessDetail.swift in Sources */,
 				BB407C15278F8DF0009466F6 /* LaunchView.swift in Sources */,
 				BB407C1D278F8E37009466F6 /* Business.swift in Sources */,
+				BB407C23278FA372009466F6 /* BusinessMap.swift in Sources */,
 				BB407BF5278F8DCD009466F6 /* CitySightsApp.swift in Sources */,
 				BB407C18278F8E1E009466F6 /* ContentModel.swift in Sources */,
 				BB407C20278F8E44009466F6 /* Constants.swift in Sources */,
