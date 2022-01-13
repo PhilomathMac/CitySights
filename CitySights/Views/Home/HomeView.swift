@@ -81,6 +81,7 @@ struct HomeView: View {
                     .navigationBarHidden(true)
                 }
             }
+            .accentColor(.white)
         } else {
             // Don't have data yet so let user know to wait
             ProgressView()

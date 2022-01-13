@@ -43,8 +43,9 @@ struct OnboardingView: View {
                     Text("Ready to discover your city?")
                         .bold()
                         .font(.title)
+                        .padding(.horizontal)
                     Text("We'll show you the best restaurants, venues, and more based on your location!")
-                        .padding(.top)
+                        .padding()
                 }
                 .tag(1)
                 .foregroundColor(.white)

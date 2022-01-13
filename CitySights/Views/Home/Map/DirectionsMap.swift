@@ -14,6 +14,7 @@ struct DirectionsMap : UIViewRepresentable {
     @EnvironmentObject var model: ContentModel
     var business: Business
     
+    
     var start: CLLocationCoordinate2D {
         
         return model.locationManager.location?.coordinate ?? CLLocationCoordinate2D()
@@ -90,6 +91,7 @@ struct DirectionsMap : UIViewRepresentable {
     }
     
     class Coordinator: NSObject, MKMapViewDelegate {
+        
         
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             

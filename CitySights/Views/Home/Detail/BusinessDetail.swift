@@ -11,6 +11,7 @@ struct BusinessDetail: View {
     
     var business: Business
     @State private var showDirections = false
+    private let blue = Color(red: 0/255, green: 130/255, blue: 167/255)
     
     var body: some View {
         VStack (alignment: .leading){
@@ -32,7 +33,7 @@ struct BusinessDetail: View {
                 ZStack (alignment: .leading) {
                     Rectangle()
                         .frame(height: 36)
-                        .foregroundColor((business.isClosed ?? false) ? .gray : .blue)
+                        .foregroundColor((business.isClosed ?? false) ? .gray : blue)
                     Text((business.isClosed ?? false) ? "Closed" : "Open")
                         .foregroundColor(.white)
                         .padding(.leading)
@@ -96,7 +97,7 @@ struct BusinessDetail: View {
                 ZStack {
                     Rectangle()
                         .frame(height: 48)
-                        .foregroundColor(.blue)
+                        .foregroundColor(blue)
                         .cornerRadius(10)
                     
                     Text("Get Directions")
