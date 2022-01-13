@@ -17,6 +17,7 @@ class ContentModel : NSObject, ObservableObject, CLLocationManagerDelegate {
     
     @Published var restaurants = [Business]()
     @Published var sights = [Business]()
+    @Published var placemark: CLPlacemark?
     
     // MARK: Init
     // Runs when a new instance of ContentModel is created
@@ -27,11 +28,12 @@ class ContentModel : NSObject, ObservableObject, CLLocationManagerDelegate {
         
         // Set ContentModel as delegate of locationManager
         locationManager.delegate = self
-        
+         
+    }
+    
+    func requestGeolocationPermission() {
         // Request Permission
         locationManager.requestWhenInUseAuthorization()
-        
-        
     }
     
     // MARK: Location Manager Delegate Methods
@@ -61,6 +63,20 @@ class ContentModel : NSObject, ObservableObject, CLLocationManagerDelegate {
             
             // Stop requesting location after we get it once (since we only need it once)
             locationManager.stopUpdatingLocation()
+            
+            // Get the placemark of the user
+            let geoCoder = CLGeocoder()
+            
+            geoCoder.reverseGeocodeLocation(userLocation!) { placemarks, error in
+                
+                // Check that there aren't errors
+                if error == nil && placemarks != nil {
+                    
+                    self.placemark = placemarks?.first
+                    
+                }
+                
+            }
             
             // If we have the coordinates of the user, send into Yelp API
             getBusinesses(category: Constants.sightsKey, location: userLocation!)
@@ -118,7 +134,7 @@ class ContentModel : NSObject, ObservableObject, CLLocationManagerDelegate {
                         let result = try decoder.decode(BusinessSearch.self, from: data!)
                         
                         // Sort businesses
-                        var businesses = result.businesses.sorted { (b1, b2) -> Bool in
+                        let businesses = result.businesses.sorted { (b1, b2) -> Bool in
                             return b1.distance ?? 0 < b2.distance ?? 0
                         }
                         

@@ -22,6 +22,13 @@
 		BB407C1D278F8E37009466F6 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB407C1B278F8E37009466F6 /* Business.swift */; };
 		BB407C20278F8E44009466F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB407C1F278F8E44009466F6 /* Constants.swift */; };
 		BB407C23278FA372009466F6 /* BusinessMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB407C22278FA372009466F6 /* BusinessMap.swift */; };
+		BB407C252790A37F009466F6 /* DirectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB407C242790A37F009466F6 /* DirectionsView.swift */; };
+		BB407C272790A3D8009466F6 /* BusinessTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB407C262790A3D8009466F6 /* BusinessTitle.swift */; };
+		BB407C292790A7C0009466F6 /* DirectionsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB407C282790A7C0009466F6 /* DirectionsMap.swift */; };
+		BB407C2B2790AFB5009466F6 /* DeniedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB407C2A2790AFB5009466F6 /* DeniedView.swift */; };
+		BB407C2D2790AFCB009466F6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB407C2C2790AFCB009466F6 /* OnboardingView.swift */; };
+		BB407C2F2790B927009466F6 /* YelpAttribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB407C2E2790B927009466F6 /* YelpAttribution.swift */; };
+		BB407C312790BAD4009466F6 /* DashedDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB407C302790BAD4009466F6 /* DashedDivider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +48,13 @@
 		BB407C1B278F8E37009466F6 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		BB407C1F278F8E44009466F6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BB407C22278FA372009466F6 /* BusinessMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessMap.swift; sourceTree = "<group>"; };
+		BB407C242790A37F009466F6 /* DirectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsView.swift; sourceTree = "<group>"; };
+		BB407C262790A3D8009466F6 /* BusinessTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTitle.swift; sourceTree = "<group>"; };
+		BB407C282790A7C0009466F6 /* DirectionsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsMap.swift; sourceTree = "<group>"; };
+		BB407C2A2790AFB5009466F6 /* DeniedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeniedView.swift; sourceTree = "<group>"; };
+		BB407C2C2790AFCB009466F6 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		BB407C2E2790B927009466F6 /* YelpAttribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAttribution.swift; sourceTree = "<group>"; };
+		BB407C302790BAD4009466F6 /* DashedDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedDivider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +109,12 @@
 		BB407C02278F8DF0009466F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BB407C0D278F8DF0009466F6 /* LaunchView.swift */,
 				BB407C03278F8DF0009466F6 /* Home */,
 				BB407C0C278F8DF0009466F6 /* Denied */,
-				BB407C0D278F8DF0009466F6 /* LaunchView.swift */,
 				BB407C0E278F8DF0009466F6 /* Onboarding */,
+				BB407C2E2790B927009466F6 /* YelpAttribution.swift */,
+				BB407C302790BAD4009466F6 /* DashedDivider.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -129,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				BB407C0A278F8DF0009466F6 /* BusinessDetail.swift */,
+				BB407C242790A37F009466F6 /* DirectionsView.swift */,
+				BB407C262790A3D8009466F6 /* BusinessTitle.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -136,6 +154,7 @@
 		BB407C0C278F8DF0009466F6 /* Denied */ = {
 			isa = PBXGroup;
 			children = (
+				BB407C2A2790AFB5009466F6 /* DeniedView.swift */,
 			);
 			path = Denied;
 			sourceTree = "<group>";
@@ -143,6 +162,7 @@
 		BB407C0E278F8DF0009466F6 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				BB407C2C2790AFCB009466F6 /* OnboardingView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -176,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				BB407C22278FA372009466F6 /* BusinessMap.swift */,
+				BB407C282790A7C0009466F6 /* DirectionsMap.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -250,16 +271,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB407C292790A7C0009466F6 /* DirectionsMap.swift in Sources */,
 				BB407C14278F8DF0009466F6 /* BusinessSectionHeader.swift in Sources */,
 				BB407C0F278F8DF0009466F6 /* HomeView.swift in Sources */,
+				BB407C2D2790AFCB009466F6 /* OnboardingView.swift in Sources */,
+				BB407C252790A37F009466F6 /* DirectionsView.swift in Sources */,
 				BB407C12278F8DF0009466F6 /* BusinessSection.swift in Sources */,
 				BB407C1C278F8E37009466F6 /* BusinessSearch.swift in Sources */,
 				BB407C11278F8DF0009466F6 /* BusinessRow.swift in Sources */,
 				BB407C10278F8DF0009466F6 /* BusinessList.swift in Sources */,
 				BB407C13278F8DF0009466F6 /* BusinessDetail.swift in Sources */,
+				BB407C312790BAD4009466F6 /* DashedDivider.swift in Sources */,
 				BB407C15278F8DF0009466F6 /* LaunchView.swift in Sources */,
+				BB407C272790A3D8009466F6 /* BusinessTitle.swift in Sources */,
 				BB407C1D278F8E37009466F6 /* Business.swift in Sources */,
 				BB407C23278FA372009466F6 /* BusinessMap.swift in Sources */,
+				BB407C2B2790AFB5009466F6 /* DeniedView.swift in Sources */,
+				BB407C2F2790B927009466F6 /* YelpAttribution.swift in Sources */,
 				BB407BF5278F8DCD009466F6 /* CitySightsApp.swift in Sources */,
 				BB407C18278F8E1E009466F6 /* ContentModel.swift in Sources */,
 				BB407C20278F8E44009466F6 /* Constants.swift in Sources */,

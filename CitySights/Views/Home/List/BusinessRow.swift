@@ -44,7 +44,9 @@ struct BusinessRow: View {
                         .font(.caption)
                 }
             }
-        }.foregroundColor(.black)
+        }
+        .foregroundColor(.black)
+        .padding(.vertical)
     }
 }
 

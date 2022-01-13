@@ -24,7 +24,7 @@ struct HomeView: View {
                     VStack (alignment: .leading){
                         HStack{
                             Image(systemName: "mappin.circle")
-                            Text("User City")
+                            Text(model.placemark?.locality ?? "Error")
                             Spacer()
                             Button {
                                 self.isMapShowing = true
@@ -36,7 +36,14 @@ struct HomeView: View {
                         
                         Divider()
                         
-                        BusinessList()
+                        ZStack (alignment: .top) {
+                            BusinessList()
+                            
+                            HStack {
+                                Spacer()
+                                YelpAttribution(link: "https://yelp.com")
+                            }
+                        }
                     }
                     .padding([.horizontal, .top])
                     .navigationBarHidden(true)
@@ -59,7 +66,7 @@ struct HomeView: View {
                                 .frame(height: 48)
                             HStack {
                                 Image(systemName: "mappin.circle")
-                                Text("San Francisco")
+                                Text(model.placemark?.locality ?? "Error")
                                 Spacer()
                                 Button {
                                     self.isMapShowing = false

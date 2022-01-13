@@ -23,7 +23,7 @@ struct BusinessSection: View {
                     BusinessRow(business: business)
                 }
                 
-                Divider()
+                DashedDivider()
                 
             }
         }
