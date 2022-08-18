@@ -1,7 +1,7 @@
 # CitySights
 
 <p align="center">
-  <img src="https://github.com/PhilomathMac/CitySights/blob/main/PortfolioImage.png?raw=true" alt="citysights screenshot" width="200"/>
+  <img src="https://github.com/PhilomathMac/CitySights/blob/main/PortfolioImage.png?raw=true" alt="citysights screenshot" width="100%"/>
 </p>
 
 ## Description
