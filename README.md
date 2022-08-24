@@ -9,7 +9,17 @@ SwiftUI app that uses yelp's API to display the top 10 restaurants and sights ne
 
 ## Skills Practiced
 
-* ?
+* External API's
+* EnvironmentObject
+* NavigationView
+* .sheet Modifier
+* ObservedObject
+* MapKit
+* MKPointAnnotations
+* MKDirections
+* MKMapItem
+* Using User Location
+* Decoding Remote JSON Data
 
 ## Future Features / Fixes
 * Fix return from map bug
